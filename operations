@@ -119,8 +119,38 @@ switch (key)
 		LCD_command(0x01);//clearing lcd
 		LCD_command(0x02);//returing cursor to its initial position
       break;
+case 'd' :
+	LCD_String(“Cooking Time?”);
+	delayMs(2000);
+	LCD_command(0xC0);
+	char arr [3]= {'0','0','0','0'};
+	LCD_String("00:00");
+	for(int i=3; i>=0; i--){
+                for(int j=0; j<3 ; j++){
+                arr[j] = arr[j+1];
+                  }
+                char c = keypad_getkey();
+                arr[3] = c;
+             int min = (int)arr[0]*10+ (int)arr[1];
+             int sec = (int)arr[2]*10+ (int)arr[3];
+                LCD_Display(min, sec);
+                if (SW2==1 && door is closed){
+                        if((min == 30 && sec == 0)|| (min<30 && sec <= 59)) {
+                           startCooking();
+                        countdown(min,sec);
+                        break;
+                        }
+                        else {
+                            LCD_String("ERR");
+                            break;
+                        }
+                }
+                if (SW1 ==1){
+                    LCD_command(0x01); //Clear display screen
+                    break;
+                }
+	}
 
-//liliane --> case C
 
 }
 
