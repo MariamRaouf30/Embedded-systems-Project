@@ -45,7 +45,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\</OutputDirectory>
-          <OutputName>project</OutputName>
+          <OutputName>Switches</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>0</CreateHexFile>
@@ -409,11 +409,6 @@
               <FileName>startup_TM4C123.s</FileName>
               <FileType>2</FileType>
               <FilePath>.\startup_TM4C123.s</FilePath>
-            </File>
-            <File>
-              <FileName>Io.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Io.h</FilePath>
             </File>
           </Files>
         </Group>
