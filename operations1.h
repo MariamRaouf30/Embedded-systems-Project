@@ -63,3 +63,45 @@ void SysTick_wait1ms(){ //1m sec wait
  NVIC_ST_RELOAD_R = 16000 -1;
  NVIC_ST_CURRENT_R = 0;
  while((NVIC_ST_CTRL_R & 0X0001000)==0){};
+	
+void start_reading(unsigned char key)
+{
+		
+LCD_command(0x80); /* LCD cursor location */
+
+
+ /* if a key is pressed */
+switch (key)
+{
+  case ('A'):
+
+			LCD_command(0x01);//clearing lcd
+			LCD_String("Popcorn"); 
+		delayMs(2000);//delay 2 seconds
+		LCD_command(0x01);//clearing lcd
+		LCD_command(0x02);//returing cursor to its initial position
+	 	break; 
+	 
+	 case ('B')://miffro -->case B
+			LCD_String ("Beef");
+			delayMs(2000);//delay 2 seconds
+			LCD_command(0x01);//clearing lcd
+	 		LCD_command(0x02);//returing cursor to its initial position
+	 break;
+
+	 case ('C'):
+			LCD_String ("chicken");
+			delayMs(2000);//delay 2 seconds
+			LCD_command(0x01);//clearing lcd
+	 		LCD_command(0x02);//returing cursor to its initial position
+			break;
+	 
+	 case('D'):
+				LCD_String("Cooking Time?");
+				delayMs(2000);
+				LCD_command(0xC0);
+				mystate =cooking;
+				break;
+}
+return;
+}	
