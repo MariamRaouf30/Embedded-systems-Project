@@ -41,3 +41,25 @@ unsigned sw3_Input(void);
 
 
 int8_t i;
+
+
+
+void SysTick_Init(void){ //intialize systick
+	NVIC_ST_CTRL_R = 0;
+	NVIC_ST_RELOAD_R = 0x00FFFFFF;
+	NVIC_ST_CURRENT_R = 0;
+	NVIC_ST_CTRL_R = 0x00000005;
+
+}	
+
+void SysTick_wait1s(){ //1 sec wait
+ NVIC_ST_RELOAD_R = 16000000 -1;
+ NVIC_ST_CURRENT_R = 0;
+ while((NVIC_ST_CTRL_R & 0X0001000)==0){};
+}
+
+
+void SysTick_wait1ms(){ //1m sec wait
+ NVIC_ST_RELOAD_R = 16000 -1;
+ NVIC_ST_CURRENT_R = 0;
+ while((NVIC_ST_CTRL_R & 0X0001000)==0){};
