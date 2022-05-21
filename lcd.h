@@ -1,3 +1,11 @@
+#define HIGH   1
+#define LOW    0
+
+#define RS 0x02
+#define RW 0x04
+#define EN 0x08
+
+#define Clear		             0x01         
 #define Home             		 0x02          
 #define EntryMode            0x06          
 #define DisplayOff           0x08 
