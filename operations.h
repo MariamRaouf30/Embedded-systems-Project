@@ -69,3 +69,37 @@ switch (key)
 }
 return;
 }
+
+enum States countdown(int min, int sec){
+	
+while (min != -1){
+				RGB_Output(0x0E);
+	      LCD_Display(min,sec);//displays minutes and secondes on lcd
+							delayMs(290);
+                 sec--;
+	         while(sw3_Input()==1){ Blink();}//While door open pause
+			while(1){
+				while(sw_Input()==0x01){//switch 1 pressed for 1st time and pause
+					delayMs(3000);
+					while(sw_Input()!=0x10){//switch 2 pressed after switch 1 (continue cooking)
+						Blink();	
+						if(sw_Input()==0x01){//switch 1 pressed for 2nd time clear lcd
+						LCD_command(0x01);
+						LCD_String("lcd clear!");
+						delayMs(500);
+						LCD_command(0x01);
+						return idle;
+						
+						}
+					}
+				}	
+				break;
+			}
+                 if(sec == -1){
+                     min--;
+                     sec = 59;
+									 	
+                 }
+             }
+return finish;
+}

@@ -131,4 +131,7 @@ void LCD_Display(int minutes, int seconds){
 	 }
  }
 
-
+void LCD_Clear_screen(){
+	LCD_command(Clear);
+	delayMs(10);
+}
