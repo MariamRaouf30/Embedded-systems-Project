@@ -3,10 +3,63 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
-C:\Users\dell\Desktop\Embedded-systems-Project\project.uvproj
+C:\Users\DELL\Desktop\git\Embedded-systems-Project\project.uvproj
 Project File Date:  05/23/2022
 
 <h2>Output:</h2>
+Build target 'Target 1'
+compiling main.c...
+delays.h(3): warning:  #1-D: last line of file ends without a newline
+  void SysTick_Init(void);
+delays.h(3): warning:  #1-D: last line of file ends without a newline
+  void SysTick_Init(void);
+keypad.h(14): warning:  #1-D: last line of file ends without a newline
+  unsigned char keypad_getkey(void);
+lcd.h(33): warning:  #1-D: last line of file ends without a newline
+  void LCD_goto_position(unsigned char  row,unsigned char col);
+delays.h(3): warning:  #1-D: last line of file ends without a newline
+  void SysTick_Init(void);
+delays.h(3): warning:  #1-D: last line of file ends without a newline
+  void SysTick_Init(void);
+keypad.h(14): warning:  #1-D: last line of file ends without a newline
+  unsigned char keypad_getkey(void);
+lcd.h(33): warning:  #1-D: last line of file ends without a newline
+  void LCD_goto_position(unsigned char  row,unsigned char col);
+main.c: 8 warnings, 0 errors
+linking...
+.\project.axf: Error: L6218E: Undefined symbol LCD_Clear_screen (referred from lcd.o).
+.\project.axf: Error: L6218E: Undefined symbol RGB_Init (referred from main.o).
+.\project.axf: Error: L6218E: Undefined symbol beef_cooking (referred from main.o).
+.\project.axf: Error: L6218E: Undefined symbol chicken_cooking (referred from main.o).
+.\project.axf: Error: L6218E: Undefined symbol cooking_time (referred from main.o).
+.\project.axf: Error: L6218E: Undefined symbol countdown (referred from main.o).
+Not enough information to list image symbols.
+Finished: 1 information, 0 warning and 6 error messages.
+".\project.axf" - 6 Error(s), 8 Warning(s).
+Target not created
 </pre>
 </body>
 </html>
+ declaration is incompatible with "enum States mystate" (declared at line 19 of "operations.h")
+  enum States {idle, prep, cooking, paused, finish} mystate;
+main.c(72): warning:  #188-D: enumerated type mixed with another type
+                                                mystate=countdown(1, 0);//printing countdown
+main.c(99): warning:  #188-D: enumerated type mixed with another type
+                                                mystate=cooking_time();
+main.c: 10 warnings, 6 errors
+".\project.axf" - 6 Error(s), 10 Warning(s).
+Target not created
+wline
+  }}
+main.c: 11 warnings, 6 errors
+".\project.axf" - 6 Error(s), 11 Warning(s).
+Target not created
+ation to list image symbols.
+Finished: 1 information, 0 warning and 7 error messages.
+".\project.axf" - 7 Error(s), 14 Warning(s).
+Target not created
+mbol countdown (referred from main.o).
+Not enough information to list image symbols.
+Finished: 1 information, 0 warning and 7 error messages.
+".\project.axf" - 7 Error(s), 15 Warning(s).
+Target not created

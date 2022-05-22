@@ -1,4 +1,3 @@
-//Displays character pressed on keypad on LCD
 #include "TM4C123.h"
 #include "stdio.h"
 #include "Io.h"
@@ -32,3 +31,41 @@ int minutes;
 char c;
 int min;
 int  sec;
+
+void SW3_Init(void);
+unsigned sw3_Input(void);
+
+
+int8_t i;
+void start_reading(unsigned char key)
+{
+		
+LCD_command(0x80); /* LCD cursor location */
+switch (key)
+{
+  case ('A'):
+
+			LCD_command(0x01);//clearing lcd
+			LCD_String("Popcorn"); 
+		delayMs(2000);//delay 2 seconds
+		LCD_command(0x01);//clearing lcd
+		LCD_command(0x02);//returing cursor to its initial position
+	 	break; 
+	 
+	 case ('B')://miffro -->case B
+			
+	 break;
+
+	 case ('C'):
+			
+			break;
+	 
+	 case('D'):
+				LCD_String("Cooking Time?");
+				delayMs(2000);
+				LCD_command(0xC0);
+				mystate =cooking;
+				break;
+}
+return;
+}
