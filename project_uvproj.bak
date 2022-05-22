@@ -450,6 +450,11 @@
               <FileType>5</FileType>
               <FilePath>.\keypad.h</FilePath>
             </File>
+            <File>
+              <FileName>Switches.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Switches.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

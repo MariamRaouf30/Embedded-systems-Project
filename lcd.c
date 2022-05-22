@@ -94,3 +94,41 @@ void LCD_SendString(char *data){
 		data++;
 	}
 };
+
+void LCD_setcursorRowCol(unsigned int row,unsigned int col)
+{ // goes to position (x,y) on the display
+	unsigned char  line_no[]={0x80,0xC0};
+	LCD_command(line_no[col-1] + row - 1);
+	delayMs(50);
+}
+
+void LCD_Display(int minutes, int seconds){
+	char y[5], x[5]; 
+	LCD_Clear_screen();  
+ 	LCD_command(0x02);//returing cursor to its initial position
+	//LCD_setcursorRowCol(1,0);
+	sprintf(y ,"%d" , minutes);
+		if (minutes<10)
+		{
+			LCD_Write_Char('0');
+			LCD_String(y);
+		}
+	 else
+	 {
+		 LCD_String(y);
+	 }
+  
+  LCD_String(":");  
+	sprintf(x ,"%d" , seconds);
+	 		if (seconds<10)
+		{
+			LCD_Write_Char('0');
+			LCD_String(x);
+		}
+	 else
+	 {
+		 LCD_String(x);
+	 }
+ }
+
+
