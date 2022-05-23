@@ -56,7 +56,13 @@ while(1){
 
 	 switch(mystate){
 		case (idle):
-		//initial state
+			LCD_Clear_screen();
+		LCD_String("Start!");
+		while (keypad_getkey() == 0xFF){};
+			LCD_Clear_screen();
+			key = keypad_getkey();             // read the keypad 
+					if(key=='A' || key=='B'||key=='C'||key=='D'){
+						mystate = prep;}
 							break;
 		
 						
