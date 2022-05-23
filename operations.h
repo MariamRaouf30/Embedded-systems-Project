@@ -61,6 +61,32 @@ void beef_cooking(unsigned char weight){
       
 	}
 
+	void chicken_cooking(unsigned char weight){ 
+		
+		
+		if(weight== 'A'||weight=='B'||weight=='C'||weight=='D'||weight=='*'||weight=='#'||weight=='0'){
+		LCD_command(0x01);//clearing lcd
+		LCD_String("Err");
+		delayMs(2000);
+		LCD_command(0x01);//clearing lcd
+		LCD_command(0x02);//returing cursor to its initial position
+		}
+		else{
+		// int x = (int)weight * 30000;
+//			char w[] = {weight};
+			int x = weight -48;
+			x=x*12;
+			minutes = x/60;
+			seconds = x-(minutes *60);
+      mystate=countdown( minutes,  seconds);
+			
+		 //mystate = print_time(x*30 );//printing countdown	
+		}
+		LCD_command(0x01);//clearing lcd
+		LCD_command(0x02);//returing cursor to its initial position
+      
+	}
+
 int8_t i;
 void start_reading(unsigned char key)
 {
