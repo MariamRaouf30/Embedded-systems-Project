@@ -31,3 +31,4 @@ void LCD_Display(int minutes, int seconds);
 enum States countdown(int min, int sec);
 void LCD_Clear_screen(void);
 void LCD_goto_position(unsigned char  row,unsigned char col);
+

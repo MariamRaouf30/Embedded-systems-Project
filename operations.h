@@ -178,7 +178,31 @@ enum States cooking_time(void){
               sec = ((arr[2])-48)*10+ (arr[3]-48);//calculating secondes from 2nd 2 elements in the array
               LCD_Display(min, sec);
 							//mystate=cooking;
+								
 	             }
+						 }
+						 delayMs(2000);
+						while(sw_Input()== 0x01 ){
+							LCD_command(0x01);//clearing lcd
+							return idle;
+							
+						}
+							 while (sw_Input() == 0x10){ //switch 2 is pressed
+						 if((min == 30 && sec == 0)|| (min<30 && sec <= 59 && sec > 0)) // check input time conditions
+						{
+				    mystate=countdown(min,sec );	//start countdown 
+							if(mystate==idle)return idle;
+							else {
+							LCD_command(0x01);//clearing lcd
+							return finish;}
+						}
+           else{
+								LCD_command(0x01);//clearing lcd
+								LCD_String("Err");
+								delayMs(2000);
+								LCD_command(0x02);//returing cursor to its initial position
+           return idle;    
+					 }
 						 }
 					 }
 				 }

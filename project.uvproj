@@ -465,6 +465,11 @@
               <FileType>5</FileType>
               <FilePath>.\operations.h</FilePath>
             </File>
+            <File>
+              <FileName>delays.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\delays.h</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
