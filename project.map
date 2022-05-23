@@ -165,9 +165,9 @@ Memory Map of the image
 
   Image Entry point : 0x00000000
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x00000fec, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x00000000, Size: 0x000011c4, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Base: 0x00000000, Size: 0x00000fb8, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Base: 0x00000000, Size: 0x00001190, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -220,23 +220,23 @@ Memory Map of the image
     0x00000404   0x00000254   Code   RO           23    .text               lcd.o
     0x00000658   0x00000128   Code   RO           51    .text               keypad.o
     0x00000780   0x00000280   Code   RO           71    .text               switches.o
-    0x00000a00   0x00000340   Code   RO          117    .text               main.o
-    0x00000d40   0x00000028   Code   RO          161    .text               c_w.l(noretval__2sprintf.o)
-    0x00000d68   0x00000068   Code   RO          163    .text               c_w.l(__printf.o)
-    0x00000dd0   0x00000078   Code   RO          165    .text               c_w.l(_printf_dec.o)
-    0x00000e48   0x00000006   Code   RO          189    .text               c_w.l(heapauxi.o)
-    0x00000e4e   0x000000b8   Code   RO          194    .text               c_w.l(_printf_intcommon.o)
-    0x00000f06   0x00000002   PAD
-    0x00000f08   0x00000030   Code   RO          196    .text               c_w.l(_printf_char_common.o)
-    0x00000f38   0x0000000a   Code   RO          198    .text               c_w.l(_sputc.o)
-    0x00000f42   0x0000004a   Code   RO          218    .text               c_w.l(sys_stackheap_outer.o)
-    0x00000f8c   0x0000000c   Code   RO          220    .text               c_w.l(exit.o)
-    0x00000f98   0x00000008   Code   RO          228    .text               c_w.l(libspace.o)
-    0x00000fa0   0x0000000c   Code   RO          287    .text               c_w.l(sys_exit.o)
-    0x00000fac   0x00000002   Code   RO          298    .text               c_w.l(use_no_semi.o)
-    0x00000fae   0x00000000   Code   RO          300    .text               c_w.l(indicate_semi.o)
-    0x00000fae   0x0000000a   Code   RO          285    x$fpl$fpinit        fz_wm.l(fpinit.o)
-    0x00000fb8   0x00000000   Data   RO          352    Region$$Table       anon$$obj.o
+    0x00000a00   0x00000518   Code   RO          117    .text               main.o
+    0x00000f18   0x00000028   Code   RO          161    .text               c_w.l(noretval__2sprintf.o)
+    0x00000f40   0x00000068   Code   RO          163    .text               c_w.l(__printf.o)
+    0x00000fa8   0x00000078   Code   RO          165    .text               c_w.l(_printf_dec.o)
+    0x00001020   0x00000006   Code   RO          189    .text               c_w.l(heapauxi.o)
+    0x00001026   0x000000b8   Code   RO          194    .text               c_w.l(_printf_intcommon.o)
+    0x000010de   0x00000002   PAD
+    0x000010e0   0x00000030   Code   RO          196    .text               c_w.l(_printf_char_common.o)
+    0x00001110   0x0000000a   Code   RO          198    .text               c_w.l(_sputc.o)
+    0x0000111a   0x0000004a   Code   RO          218    .text               c_w.l(sys_stackheap_outer.o)
+    0x00001164   0x0000000c   Code   RO          220    .text               c_w.l(exit.o)
+    0x00001170   0x00000008   Code   RO          228    .text               c_w.l(libspace.o)
+    0x00001178   0x0000000c   Code   RO          287    .text               c_w.l(sys_exit.o)
+    0x00001184   0x00000002   Code   RO          298    .text               c_w.l(use_no_semi.o)
+    0x00001186   0x00000000   Code   RO          300    .text               c_w.l(indicate_semi.o)
+    0x00001186   0x0000000a   Code   RO          285    x$fpl$fpinit        fz_wm.l(fpinit.o)
+    0x00001190   0x00000000   Data   RO          352    Region$$Table       anon$$obj.o
 
 
     Execution Region ER_RW (Base: 0x20000000, Size: 0x00000034, Max: 0xffffffff, ABSOLUTE)

@@ -116,7 +116,12 @@ while(1){
 			
 					case (finish):	
 					
-						//finished state (buzzer on and blinking)
+						LCD_String("done");
+				for( f=0 ; f<3 ; f++){
+		Buzzer_ON ();
+		Blink();	
+		}
+			mystate = idle;	
 		break;
 }
 	
