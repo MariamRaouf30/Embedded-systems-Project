@@ -60,10 +60,10 @@ while(1){
 							break;
 		
 						
-		case (prep):
-					//reading input from user and printying it on screen and specifying wieghts for chicken and beef
+	case (prep):
+					start_reading(key);
+					mystate = cooking;
 		break;
-					
 					
 		case (cooking):
 				switch(key){

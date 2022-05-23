@@ -20,11 +20,11 @@ Section Cross References
     lcd.o(.text) refers to noretval__2sprintf.o(.text) for __2sprintf
     keypad.o(.text) refers to delays.o(.text) for delayMs
     keypad.o(.text) refers to keypad.o(.data) for symbol
-    main.o(.text) refers to lcd.o(.text) for LCD_command
+    main.o(.text) refers to lcd.o(.text) for LCD_Display
     main.o(.text) refers to delays.o(.text) for delayMs
-    main.o(.text) refers to switches.o(.text) for Buzzer_VInit
+    main.o(.text) refers to switches.o(.text) for sw3_Input
     main.o(.text) refers to keypad.o(.text) for keypad_Init
-    main.o(.text) refers to main.o(.data) for mystate
+    main.o(.text) refers to main.o(.data) for minutes
     __2sprintf.o(.text) refers to _printf_char_common.o(.text) for _printf_char_common
     __2sprintf.o(.text) refers to _sputc.o(.text) for _sputc
     noretval__2sprintf.o(.text) refers to _printf_char_common.o(.text) for _printf_char_common
@@ -165,9 +165,9 @@ Memory Map of the image
 
   Image Entry point : 0x00000000
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x00000e60, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00000fec, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Base: 0x00000000, Size: 0x00000e2c, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Base: 0x00000000, Size: 0x00000fb8, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -217,26 +217,26 @@ Memory Map of the image
     0x000002a2   0x00000006   Code   RO          279    .ARM.Collect$$rtexit$$00000004  c_w.l(rtexit2.o)
     0x000002a8   0x0000010c   Code   RO            4  * .text               startup_tm4c123.o
     0x000003b4   0x00000050   Code   RO           10    .text               delays.o
-    0x00000404   0x00000244   Code   RO           23    .text               lcd.o
-    0x00000648   0x00000128   Code   RO           51    .text               keypad.o
-    0x00000770   0x00000280   Code   RO           71    .text               switches.o
-    0x000009f0   0x000001c4   Code   RO          117    .text               main.o
-    0x00000bb4   0x00000028   Code   RO          161    .text               c_w.l(noretval__2sprintf.o)
-    0x00000bdc   0x00000068   Code   RO          163    .text               c_w.l(__printf.o)
-    0x00000c44   0x00000078   Code   RO          165    .text               c_w.l(_printf_dec.o)
-    0x00000cbc   0x00000006   Code   RO          189    .text               c_w.l(heapauxi.o)
-    0x00000cc2   0x000000b8   Code   RO          194    .text               c_w.l(_printf_intcommon.o)
-    0x00000d7a   0x00000002   PAD
-    0x00000d7c   0x00000030   Code   RO          196    .text               c_w.l(_printf_char_common.o)
-    0x00000dac   0x0000000a   Code   RO          198    .text               c_w.l(_sputc.o)
-    0x00000db6   0x0000004a   Code   RO          218    .text               c_w.l(sys_stackheap_outer.o)
-    0x00000e00   0x0000000c   Code   RO          220    .text               c_w.l(exit.o)
-    0x00000e0c   0x00000008   Code   RO          228    .text               c_w.l(libspace.o)
-    0x00000e14   0x0000000c   Code   RO          287    .text               c_w.l(sys_exit.o)
-    0x00000e20   0x00000002   Code   RO          298    .text               c_w.l(use_no_semi.o)
-    0x00000e22   0x00000000   Code   RO          300    .text               c_w.l(indicate_semi.o)
-    0x00000e22   0x0000000a   Code   RO          285    x$fpl$fpinit        fz_wm.l(fpinit.o)
-    0x00000e2c   0x00000000   Data   RO          352    Region$$Table       anon$$obj.o
+    0x00000404   0x00000254   Code   RO           23    .text               lcd.o
+    0x00000658   0x00000128   Code   RO           51    .text               keypad.o
+    0x00000780   0x00000280   Code   RO           71    .text               switches.o
+    0x00000a00   0x00000340   Code   RO          117    .text               main.o
+    0x00000d40   0x00000028   Code   RO          161    .text               c_w.l(noretval__2sprintf.o)
+    0x00000d68   0x00000068   Code   RO          163    .text               c_w.l(__printf.o)
+    0x00000dd0   0x00000078   Code   RO          165    .text               c_w.l(_printf_dec.o)
+    0x00000e48   0x00000006   Code   RO          189    .text               c_w.l(heapauxi.o)
+    0x00000e4e   0x000000b8   Code   RO          194    .text               c_w.l(_printf_intcommon.o)
+    0x00000f06   0x00000002   PAD
+    0x00000f08   0x00000030   Code   RO          196    .text               c_w.l(_printf_char_common.o)
+    0x00000f38   0x0000000a   Code   RO          198    .text               c_w.l(_sputc.o)
+    0x00000f42   0x0000004a   Code   RO          218    .text               c_w.l(sys_stackheap_outer.o)
+    0x00000f8c   0x0000000c   Code   RO          220    .text               c_w.l(exit.o)
+    0x00000f98   0x00000008   Code   RO          228    .text               c_w.l(libspace.o)
+    0x00000fa0   0x0000000c   Code   RO          287    .text               c_w.l(sys_exit.o)
+    0x00000fac   0x00000002   Code   RO          298    .text               c_w.l(use_no_semi.o)
+    0x00000fae   0x00000000   Code   RO          300    .text               c_w.l(indicate_semi.o)
+    0x00000fae   0x0000000a   Code   RO          285    x$fpl$fpinit        fz_wm.l(fpinit.o)
+    0x00000fb8   0x00000000   Data   RO          352    Region$$Table       anon$$obj.o
 
 
     Execution Region ER_RW (Base: 0x20000000, Size: 0x00000034, Max: 0xffffffff, ABSOLUTE)
